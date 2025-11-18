@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio CSS: Treinamento Pokémon</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Importando Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Importando Fonte Pixelada (Press Start 2P) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="h-screen w-screen flex items-center justify-center p-4">
+
+    <!-- Corpo Principal do GBA -->
+    <!-- Usamos max-w para garantir que caiba em telas menores, mas o design ideal é horizontal -->
+    <div class="gba-body relative w-full max-w-[800px] aspect-[16/10] md:aspect-[3/2] bg-[#584e96] rounded-[40px] md:rounded-[60px] flex flex-col md:flex-row items-center justify-between p-4 md:p-8 border-b-8 border-[#403875]">
+        
+        <!-- Botões de Ombro (Decorativos) -->
+        <div class="absolute -top-4 left-12 w-24 h-8 bg-gray-400 rounded-t-lg -z-10 border-2 border-b-0 border-gray-600"></div>
+        <div class="absolute -top-4 right-12 w-24 h-8 bg-gray-400 rounded-t-lg -z-10 border-2 border-b-0 border-gray-600"></div>
+
+        <!-- Lado Esquerdo: D-Pad -->
+        <div class="w-full md:w-1/4 h-full flex flex-col items-center justify-center order-2 md:order-1 mt-4 md:mt-0">
+            <div class="relative w-32 h-32">
+                <!-- Cruz direcional -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-32 bg-gray-300 rounded shadow-lg"></div>
+                <div class="absolute top-1/2 left-0 -translate-y-1/2 w-32 h-10 bg-gray-300 rounded shadow-lg"></div>
+                <!-- Centro D-Pad -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gray-200 rounded-full">
+                    <div class="w-8 h-8 bg-gray-300 rounded-full m-1 shadow-inner"></div>
+                </div>
+                
+                <!-- Botões clicáveis (simulados) -->
+                <button class="btn-push absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 hover:bg-gray-400 rounded-t cursor-pointer" title="Cima"></button>
+                <button class="btn-push absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-10 hover:bg-gray-400 rounded-b cursor-pointer" title="Baixo"></button>
+                <button class="btn-push absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 hover:bg-gray-400 rounded-l cursor-pointer" title="Esquerda"></button>
+                <button class="btn-push absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 hover:bg-gray-400 rounded-r cursor-pointer" title="Direita"></button>
+            </div>
+        </div>
+
+        <!-- Centro: Tela -->
+        <div class="relative w-full md:w-2/4 h-full flex flex-col items-center order-1 md:order-2">
+            <!-- Moldura Cinza da Tela -->
+            <div class="w-full bg-[#33333a] rounded-t-[20px] rounded-b-[40px] p-4 md:p-6 shadow-inner flex flex-col items-center">
+                
+                <!-- Logo e Luz de Energia -->
+                <div class="w-full flex justify-between items-center mb-2 px-2">
+                    <div class="flex items-baseline gap-1 text-gray-400 italic font-sans font-bold select-none">
+                        <span class="text-xs md:text-sm">GAME BOY</span>
+                        <span class="text-xs md:text-sm text-[#ff0055]">ADVANCE</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full shadow-[0_0_5px_#4ade80] animate-pulse"></div>
+                        <span class="text-[6px] text-gray-500 font-sans font-bold">POWER</span>
+                    </div>
+                </div>
+
+                <!-- LCD Screen (Conteúdo Real) -->
+                <div class="relative w-full aspect-[3/2] bg-[#e0f0e3] border-4 border-gray-600 rounded shadow-inner overflow-hidden">
+                    <!-- Scanlines Overlay -->
+                    <div class="scanlines absolute inset-0 z-10 pointer-events-none"></div>
+                    
+                    <!-- Conteúdo da Lista -->
+                    <div class="absolute inset-0 p-4 overflow-y-auto retro-scrollbar z-0">
+                        <h1 class="text-center text-[#2d3748] text-xs md:text-sm mb-4 border-b-2 border-[#2d3748] pb-2 uppercase tracking-tighter">
+                            Selecionar Exercício
+                        </h1>
+                        
+                        <ul class="space-y-3 text-[10px] md:text-xs text-[#2d3748]">
+                            <li>
+                                <a href="ex01.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    1. Centralizar na Box
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ex02.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    2. Espaçar Igualmente
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ex03.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    3. Pokémon na Grama
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ex04.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    4. Torre Pokémon
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ex05.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    5. O Gengar Fugitivo! 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="exercicio6.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    6. Layout CSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="exercicio7.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    7. Flexbox
+                                </a>
+                            </li>
+                            <li>
+                                <a href="exercicio8.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    8. Grid
+                                </a>
+                            </li>
+                            <li>
+                                <a href="exercicio9.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    9. Responsivo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="exercicio10.html" class="menu-link block hover:bg-[#c8dccb] p-1 rounded transition-colors font-bold uppercase">
+                                    10. Projeto Final
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start / Select (Abaixo da tela) -->
+            <div class="mt-4 flex gap-4">
+                <div class="flex flex-col items-center">
+                    <button class="btn-push w-12 h-4 bg-gray-300 rounded-full transform rotate-12 shadow-md border border-gray-400"></button>
+                    <span class="text-[8px] text-gray-300 font-bold mt-1 tracking-widest opacity-70">SELECT</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <button class="btn-push w-12 h-4 bg-gray-300 rounded-full transform rotate-12 shadow-md border border-gray-400"></button>
+                    <span class="text-[8px] text-gray-300 font-bold mt-1 tracking-widest opacity-70">START</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Botões A/B -->
+        <div class="w-full md:w-1/4 h-full flex flex-col items-center justify-center relative order-3 mt-4 md:mt-0">
+            <!-- Grupo de botões -->
+            <div class="relative w-32 h-24 transform -rotate-12">
+                <!-- Botão A -->
+                <div class="absolute top-0 right-0 flex flex-col items-center">
+                    <button class="btn-push w-12 h-12 bg-gray-300 rounded-full shadow-lg border-b-4 border-gray-400 active:border-b-0 flex items-center justify-center text-gray-500 font-bold text-xs">A</button>
+                </div>
+                
+                <!-- Botão B -->
+                <div class="absolute bottom-0 left-0 flex flex-col items-center">
+                    <button class="btn-push w-12 h-12 bg-gray-300 rounded-full shadow-lg border-b-4 border-gray-400 active:border-b-0 flex items-center justify-center text-gray-500 font-bold text-xs">B</button>
+                </div>
+            </div>
+            
+            <!-- Saída de som (estilizada) -->
+            <div class="absolute bottom-4 right-8 flex gap-1">
+                <div class="w-1 h-8 bg-gray-900 rounded-full opacity-20"></div>
+                <div class="w-1 h-8 bg-gray-900 rounded-full opacity-20"></div>
+                <div class="w-1 h-8 bg-gray-900 rounded-full opacity-20"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Script simples para tocar som ao clicar (opcional - requer arquivos de som reais para funcionar perfeitamente)
+        // Aqui apenas adicionamos um feedback visual extra no console se necessário
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Lógica para tocar som poderia ir aqui
+                console.log('Button pressed');
+            });
+        });
+    </script>
+</body>
+</html>
